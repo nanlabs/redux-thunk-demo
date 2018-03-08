@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 
 import { fetchPeople } from './peopleActions';
 
-import Person from './components/Person';
+import PeopleList from './components/PeopleList';
+import Loader from '../common/loader';
 
 class People extends Component {
   constructor(props) {
@@ -21,22 +22,8 @@ class People extends Component {
           Fetch People
         </button>
         {this.props.loading ?
-          (
-            <div id="loader">
-              <div id="bouncer1" />
-              <div id="bouncer2" />
-            </div>
-          ) : (
-            <div id="peopleList">
-              {this.props.people.map(person => (
-                <Person
-                  key={person.id}
-                  name={person.name}
-                  age={person.age}
-                />
-              ))}
-            </div>
-          )
+          <Loader /> :
+          <PeopleList people={this.props.people} />
         }
       </div>
 

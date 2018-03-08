@@ -4,7 +4,7 @@ export const FETCH_PEOPLE_HAS_FINISHED = 'FETCH_PEOPLE_HAS_FINISHED';
 const listOfPeople = [
   {
     id: 1,
-    name: 'Max',
+    name: 'Peter',
     age: 21,
   }, {
     id: 2,
